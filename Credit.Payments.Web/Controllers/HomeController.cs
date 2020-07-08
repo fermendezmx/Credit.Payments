@@ -1,9 +1,7 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Credit.Payments.Web.Models;
-using System.Collections;
 
 namespace Credit.Payments.Web.Controllers
 {

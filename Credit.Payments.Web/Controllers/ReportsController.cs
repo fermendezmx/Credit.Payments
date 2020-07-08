@@ -12,7 +12,7 @@ namespace Credit.Payments.Web.Controllers
             int maxYears = 3;
             Hashtable years = new Hashtable();
 
-            if (!string.IsNullOrEmpty(account.History))
+            if (account.IsValid())
             {
                 for (int i = 0; i < account.History.Length; i++)
                 {
