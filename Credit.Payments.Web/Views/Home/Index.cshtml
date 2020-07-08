@@ -1,46 +1,34 @@
-﻿@using System.Collections
-@model System.Collections.Hashtable
+﻿@model Account
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bienvenido";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Histórico de Pagos</h1>
+    <h1 class="display-4">Bienvenido</h1>
 </div>
 <br />
-<div class="bs-component">
-    <table class="table table-hover">
-        <tr class="table-primary">
-            <th scope="col">Month</th>
-            <th scope="col">E</th>
-            <th scope="col">F</th>
-            <th scope="col">M</th>
-            <th scope="col">A</th>
-            <th scope="col">M</th>
-            <th scope="col">J</th>
-            <th scope="col">J</th>
-            <th scope="col">A</th>
-            <th scope="col">S</th>
-            <th scope="col">O</th>
-            <th scope="col">N</th>
-            <th scope="col">D</th>
-        </tr>
-
-        @foreach (DictionaryEntry year in Model)
-        {
-            <tr>
-                @{string[] months = (string[])year.Value;}
-                <th scope="row">
-                    @year.Key
-                </th>
-                @foreach (string n in months)
-                {
-                    <td>
-                        @n
-                    </td>
-                }
-            </tr>
-        }
-    </table>
-</div> 
+<section>
+    @using (Html.BeginForm("Index", "Reports", FormMethod.Post))
+    {
+        <h4>Por favor introduzca los datos de la cuenta</h4>
+        <hr />
+        <div class="form-group">
+            <label class="col-md-12 control-label">Histórico de pagos</label>
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.History, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-12 control-label">Fecha más reciente del histórico de pagos</label>
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @placeholder = "YYYY-MM-DD" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <button type="submit" class="btn btn-primary float-right">Crear reporte</button>
+            </div>
+        </div>
+    }
+</section>
