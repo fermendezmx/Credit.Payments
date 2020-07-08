@@ -35,13 +35,13 @@ namespace Credit.Payments.Web.Controllers
                     }
 
                     // Then add the year to the hastable with an array to hold the months
-                    years.Add(date.Year, new char[12]);
+                    years.Add(date.Year, new string[12]);
                 }
 
                 // Here we get the months of the year
-                char[] months = (char[])years[date.Year];
+                string[] months = (string[])years[date.Year];
                 // Set the value of history[i] for the current month in array
-                months[date.Month - 1] = history[i];
+                months[date.Month - 1] = $"{history[i]}";
                 // Move one month to the past
                 date = date.AddMonths(-1);
             }

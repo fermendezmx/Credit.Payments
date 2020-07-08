@@ -30,11 +30,11 @@
         @foreach (DictionaryEntry year in Model)
         {
             <tr>
-                @{char[] months = (char[])year.Value;}
+                @{string[] months = (string[])year.Value;}
                 <td>
                     @year.Key
                 </td>
-                @foreach (char n in months)
+                @foreach (string n in months)
                 {
                     <td>
                         @n
