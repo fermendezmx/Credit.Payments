@@ -11,7 +11,7 @@
 <br />
 <div class="bs-component">
     <table class="table table-hover">
-        <tr>
+        <tr class="table-primary">
             <th scope="col">Month</th>
             <th scope="col">E</th>
             <th scope="col">F</th>
@@ -31,9 +31,9 @@
         {
             <tr>
                 @{string[] months = (string[])year.Value;}
-                <td>
+                <th scope="row">
                     @year.Key
-                </td>
+                </th>
                 @foreach (string n in months)
                 {
                     <td>
